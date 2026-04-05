@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+</head>
+  <style>
+        .foto{
+            position: relative;
+            display: inline-block;
+        }
+        .foto img{
+            padding: 12px;
+            display: block;
+        }
+        .frame-pojok{
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border: 4px solid #FF0000;
+        }
+        #p1{ top:0; left:0; border-right:none; border-bottom:none; }
+        #p2{ top:0; right:0; border-left:none; border-bottom:none; }
+        #p3{ bottom:0; left:0; border-top:none; border-right:none; }
+        #p4{ bottom:0; right:0; border-top:none; border-left:none; }
+        a:hover .frame-pojok{
+            border-color: #FF00FF;
+        }
+        body{
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+<body>
+    <a href="#">
+        <div class="foto">
+            <img src="src/star.jpg" width="150">
+            <div class="frame-pojok" id="p1"></div>
+            <div class="frame-pojok" id="p2"></div>
+            <div class="frame-pojok" id="p3"></div>
+            <div class="frame-pojok" id="p4"></div>
+        </div>
+    </a>
+</body>
+</html>

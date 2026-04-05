@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+</head>
+<body>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        #topnav {
+            list-style-type: none;
+            padding: 10px;
+        }
+ 
+        #topnav li {
+            float: left;
+            margin-right: 3px;
+            border-style: dotted;
+            border-color: grey;
+            border-width: 2px;
+            position: relative;
+        }
+ 
+        #topnav li a {
+            display: block;
+            width: 110px;
+            text-align: center;
+            padding: 8px 0px;
+            text-decoration: none;
+            color: black;
+        }
+ 
+        #topnav li a:hover {
+            background-color: black;
+            color: white;
+        }
+ 
+        .submenu {
+            display: none;
+            list-style-type: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+ 
+        .submenu li {
+            float: none;
+            margin-top: 3px;
+            border-style: dotted;
+            border-color: grey;
+            border-width: 2px;
+        }
+ 
+        .submenu li a {
+            display: block;
+            width: 110px;
+            text-align: center;
+            padding: 8px 0px;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+        }
+ 
+        .submenu li a:hover {
+            background-color: black;
+            color: white;
+        }
+ 
+        #topnav li:hover .submenu {
+            display: block;
+        }
+    </style>
+</body>
+<body>
+ 
+    <ul id="topnav">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">News</a>
+            <ul class="submenu">
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Movie</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+ 
+</body>
+</html>
+ 
