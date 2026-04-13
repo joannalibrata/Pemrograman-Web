@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+ <style>
+        body { font-family: Arial, sans-serif; }
+        table { border-collapse: collapse; }
+        td { border: 1px solid #999; padding: 6px 8px; }
+        .lbl { color: #4169E1; font-weight: bold; text-align: right; width: 70px; }
+        .isian input { width: 180px; padding: 3px; }
+        input[type="button"] {
+            color: #4169E1;
+            font-weight: bold;
+            border: 1px solid #4169E1;
+            background-color: white;
+            padding: 4px 12px;
+        }
+    </style>
+    <script type="text/javascript">
+        function jalankan() {
+            var pilihan = document.getElementById("tipeKonversi").value;
+            var masukan = document.getElementById("fieldInput").value;
+ 
+            if (pilihan == "dec-bin") {
+                var angka = parseInt(masukan);
+                if (isNaN(angka) || angka < 0 || angka > 255) {
+                    alert("Input harus angka 0 sampai 255!");
+                    return;
+                }
+                var sisa = angka;
+                var biner = "";
+                for (var pos = 7; pos >= 0; pos--) {
+                    var pw = 1;
+                    for (var x = 0; x < pos; x++) pw *= 2;
+                    if (sisa >= pw) { biner += "1"; sisa -= pw; }
+                    else { biner += "0"; }
+                }
+                document.getElementById("fieldOutput").value = biner;
+ 
+            } else {
+                if (masukan.length != 8) {
+                    alert("Input harus tepat 8 digit!");
+                    return;
+                }
+                for (var i = 0; i < 8; i++) {
+                    if (masukan[i] != "0" && masukan[i] != "1") {
+                        alert("Input hanya boleh 0 atau 1!");
+                        return;
+                    }
+                }
+                var hasil = 0;
+                for (var i = 0; i < 8; i++) {
+                    var pw = 1;
+                    for (var x = 0; x < (7 - i); x++) pw *= 2;
+                    hasil += parseInt(masukan[i]) * pw;
+                }
+                document.getElementById("fieldOutput").value = hasil;
+            }
+        }
+ 
+        function kosongkan() {
+            document.getElementById("fieldInput").value = "";
+            document.getElementById("fieldOutput").value = "";
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="lbl">Input :</td>
+            <td class="isian"><input type="text" id="fieldInput" /></td>
+        </tr>
+        <tr>
+            <td class="lbl">Output :</td>
+            <td class="isian"><input type="text" id="fieldOutput" readonly /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <select id="tipeKonversi">
+                    <option value="dec-bin">decimal-biner</option>
+                    <option value="bin-dec">biner-decimal</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" value="PROSES" onclick="jalankan()" />
+                &nbsp;
+                <input type="button" value="RESET" onclick="kosongkan()" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+ 

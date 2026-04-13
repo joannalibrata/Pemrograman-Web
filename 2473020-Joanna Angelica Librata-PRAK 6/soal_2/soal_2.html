@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+<style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        td {
+            border: 2px solid black;
+            width: 40px;
+            height: 35px;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tampilTabel"></div>
+    <script type="text/javascript">
+        var masukan;
+        do {
+            masukan = prompt("A number?");
+        } while (masukan !== null && (isNaN(masukan) || masukan.trim() === ""));
+ 
+        if (masukan !== null) {
+            var angka = parseInt(masukan);
+            var baris = "";
+ 
+            for (var i = 1; i <= angka; i++) {
+                baris += "<tr>";
+                baris += "<td>" + i + "</td>";
+                baris += "<td>x</td>";
+                baris += "<td>" + angka + "</td>";
+                baris += "<td>=</td>";
+                baris += "<td>" + (i * angka) + "</td>";
+                baris += "</tr>";
+            }
+ 
+            document.getElementById("tampilTabel").innerHTML = "<table>" + baris + "</table>";
+        }
+    </script>
+</body>
+</html>
+ 

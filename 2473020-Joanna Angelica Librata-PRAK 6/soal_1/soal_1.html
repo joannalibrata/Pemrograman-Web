@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+<style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .kotak {
+            border: 3px solid black;
+            width: 55px;
+            height: 45px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .operator {
+            border: 3px solid black;
+            width: 35px;
+            text-align: center;
+            font-size: 28px;
+        }
+    </style>
+    <script type="text/javascript">
+        function menghitung() {
+            var nilaiPertama = document.getElementById("Input1").value;
+            var nilaiKedua = document.getElementById("Input2").value;
+            var x = parseInt(nilaiPertama);
+            var y = parseInt(nilaiKedua);
+ 
+            if (isNaN(x) && isNaN(y)) {
+                alert("angka pertama dan kedua harus angka");
+                return;
+            } else if (isNaN(x)) {
+                alert("angka pertama bukan angka");
+                return;
+            } else if (isNaN(y)) {
+                alert("angka kedua harus angka");
+                return;
+            }
+ 
+            document.getElementById("x1").innerHTML = x;
+            document.getElementById("y1").innerHTML = y;
+            document.getElementById("jumlah").innerHTML = x + y;
+            document.getElementById("x2").innerHTML = x;
+            document.getElementById("y2").innerHTML = y;
+            document.getElementById("selisih").innerHTML = x - y;
+        }
+    </script>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>Angka Pertama</td>
+            <td>:</td>
+            <td><input type="text" id="Input1" /></td>
+        </tr>
+        <tr>
+            <td>Angka Kedua</td>
+            <td>:</td>
+            <td><input type="text" id="Input2" /></td>
+        </tr>
+    </table>
+
+    <input type="button" value="Count" onclick="menghitung()" style="margin-top:10px;" />
+    
+    <br/>
+    <table>
+        <tr>
+            <td class="kotak" id="x1"></td>
+            <td class="operator">+</td>
+            <td class="kotak" id="y1"></td>
+            <td class="operator">=</td>
+            <td class="kotak" id="jumlah"></td>
+        </tr>
+        <tr>
+            <td class="kotak" id="x2"></td>
+            <td class="operator">-</td>
+            <td class="kotak" id="y2"></td>
+            <td class="operator">=</td>
+            <td class="kotak" id="selisih"></td>
+        </tr>
+    </table>
+</body>
+</html>

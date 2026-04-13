@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+<style>
+        .orange {
+            background-color: orange;
+            border: 1px solid white;
+        }
+    </style>
+    <script type="text/javascript">
+        function tampilPiramida() {
+            var inputT = document.getElementById("tinggi").value;
+            var t = parseInt(inputT);
+ 
+            if (isNaN(t) || t <= 0) {
+                alert("Masukkan angka yang valid!");
+                return;
+            }
+ 
+            var output = "<table width='800' height='600' style='border-collapse:collapse;'>";
+ 
+            for (var baris = 1; baris <= t; baris++) {
+                output += "<tr>";
+                var jumlahOrange = (2 * baris) - 1;
+                var jumlahKosong = t - baris;
+ 
+                for (var kiri = 0; kiri < jumlahKosong; kiri++) {
+                    output += "<td></td>";
+                }
+                for (var isi = 0; isi < jumlahOrange; isi++) {
+                    output += "<td class='orange'></td>";
+                }
+                for (var kanan = 0; kanan < jumlahKosong; kanan++) {
+                    output += "<td></td>";
+                }
+                output += "</tr>";
+            }
+ 
+            output += "</table>";
+            document.getElementById("hasilPiramida").innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    Tinggi Piramida: <input type="text" id="tinggi" />
+    <br/>
+    <input type="button" value="proses" onclick="tampilPiramida()" />
+    <br/><br/>
+    <div id="hasilPiramida"></div>
+</body>
+</html>
+ 
