@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+<style type="text/css">
+        #kotakForm {
+            border: 1px solid black;
+            width: 280px;
+            padding: 5px;
+        }
+        td {
+            padding: 3px;
+            vertical-align: top;
+        }
+        #txt2 {
+            width: 38px;
+        }
+    </style>
+    <script type="text/javascript">
+        function call_onKeyPress(ob){
+            obval = ob.value;
+            if(obval.length > 256){
+                ob.value = obval.substr(0, 256);
+                obval = ob.value;
+            }
+            document.getElementById("txt2").value = obval.length+"/256";
+        }
+    </script>
+</head>
+<body>
+    <div id="kotakForm">
+        <table>
+            <tr>
+                <td>Judul</td>
+                <td>:</td>
+                <td><input type="text" id="txtJudul" size="20" /></td>
+            </tr>
+            <tr>
+                <td>Deskripsi</td>
+                <td>:</td>
+                <td>
+                    <textarea rows="5" cols="22"
+                        onkeyup="call_onKeyPress(this)"
+                        onkeydown="call_onKeyPress(this)"></textarea>
+                    <br/>
+                    <input type="text" id="txt2" value="0/256" readonly style="float:right;" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

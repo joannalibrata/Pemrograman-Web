@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+ <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid grey;
+            padding: 5px 12px;
+        }
+        .headerBaris td {
+            background-color: #99CC99;
+        }
+        .biru {
+            background-color: #DDEEFF;
+        }
+        .orange {
+            background-color: #FFCC99;
+        }
+        .hijau {
+            background-color: #CCFFAA;
+        }
+    </style>
+    <script type="text/javascript">
+        function ubahHijau(idnya) {
+            document.getElementById(idnya).className = "hijau";
+        }
+ 
+        function kembalikan(idnya, kelasnya) {
+            document.getElementById(idnya).className = kelasnya;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr class="headerBaris">
+            <td>Position</td>
+            <td>Programming Language</td>
+            <td>Ratings</td>
+        </tr>
+        <tr id="tr1" class="biru"
+            onmouseover="ubahHijau('tr1')"
+            onmouseout="kembalikan('tr1', 'biru')">
+            <td>1</td>
+            <td>C</td>
+            <td>18.058%</td>
+        </tr>
+        <tr id="tr2" class="orange"
+            onmouseover="ubahHijau('tr2')"
+            onmouseout="kembalikan('tr2', 'orange')">
+            <td>2</td>
+            <td>Java</td>
+            <td>18.051%</td>
+        </tr>
+        <tr id="tr3" class="biru"
+            onmouseover="ubahHijau('tr3')"
+            onmouseout="kembalikan('tr3', 'biru')">
+            <td>3</td>
+            <td>C++</td>
+            <td>9.707%</td>
+        </tr>
+        <tr id="tr4" class="orange"
+            onmouseover="ubahHijau('tr4')"
+            onmouseout="kembalikan('tr4', 'orange')">
+            <td>4</td>
+            <td>PHP</td>
+            <td>9.662%</td>
+        </tr>
+        <tr id="tr5" class="biru"
+            onmouseover="ubahHijau('tr5')"
+            onmouseout="kembalikan('tr5', 'biru')">
+            <td>5</td>
+            <td>(Visual) Basic</td>
+            <td>6.392%</td>
+        </tr>
+    </table>
+</body>
+</html>
+ 

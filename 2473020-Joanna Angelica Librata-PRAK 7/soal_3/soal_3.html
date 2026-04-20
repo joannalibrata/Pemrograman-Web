@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>2473020-Joanna Angelica Librata</title>
+ <style type="text/css">
+        table {
+            border: 1px solid black;
+        }
+        td {
+            padding: 6px;
+        }
+        .labelBesar {
+            font-size: 22px;
+            font-family: Georgia, serif;
+        }
+    </style>
+    <script type="text/javascript">
+        var simpanan = new Array();
+ 
+        function masukkanData() {
+            var isiField = document.getElementById("inputData").value;
+            var angka = parseInt(isiField);
+ 
+            if (isNaN(angka)) {
+                return;
+            }
+ 
+            simpanan.push(angka);
+            document.getElementById("inputData").value = "";
+        }
+ 
+        function jalankanOperasi() {
+            var pilihanMenu = document.getElementById("menuPilihan").value;
+            var keluaran = "";
+ 
+            if (pilihanMenu == "display") {
+                keluaran = simpanan.join(", ");
+ 
+            } else if (pilihanMenu == "count") {
+                keluaran = simpanan.length;
+ 
+            } else if (pilihanMenu == "sum") {
+                var totalSum = 0;
+                for (var i = 0; i < simpanan.length; i++) {
+                    totalSum = totalSum + simpanan[i];
+                }
+                keluaran = totalSum;
+ 
+            } else if (pilihanMenu == "average") {
+                if (simpanan.length == 0) {
+                    keluaran = 0;
+                } else {
+                    var totalAvg = 0;
+                    for (var i = 0; i < simpanan.length; i++) {
+                        totalAvg = totalAvg + simpanan[i];
+                    }
+                    keluaran = totalAvg / simpanan.length;
+                }
+ 
+            } else if (pilihanMenu == "max") {
+                var nilaiMax = simpanan[0];
+                for (var i = 1; i < simpanan.length; i++) {
+                    if (simpanan[i] > nilaiMax) {
+                        nilaiMax = simpanan[i];
+                    }
+                }
+                keluaran = nilaiMax;
+ 
+            } else if (pilihanMenu == "min") {
+                var nilaiMin = simpanan[0];
+                for (var i = 1; i < simpanan.length; i++) {
+                    if (simpanan[i] < nilaiMin) {
+                        nilaiMin = simpanan[i];
+                    }
+                }
+                keluaran = nilaiMin;
+ 
+            } else if (pilihanMenu == "ganjil") {
+                var listGanjil = new Array();
+                for (var i = 0; i < simpanan.length; i++) {
+                    if (simpanan[i] % 2 != 0) {
+                        listGanjil.push(simpanan[i]);
+                    }
+                }
+                keluaran = listGanjil.join(", ");
+ 
+            } else if (pilihanMenu == "genap") {
+                var listGenap = new Array();
+                for (var i = 0; i < simpanan.length; i++) {
+                    if (simpanan[i] % 2 == 0) {
+                        listGenap.push(simpanan[i]);
+                    }
+                }
+                keluaran = listGenap.join(", ");
+ 
+            } else if (pilihanMenu == "hapus") {
+                simpanan = new Array();
+                keluaran = "";
+            }
+ 
+            document.getElementById("hasilKeluar").value = keluaran;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="labelBesar">Data</td>
+            <td><input type="text" id="inputData" size="20" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Add" onclick="masukkanData()" /></td>
+            <td>
+                <select id="menuPilihan" onchange="jalankanOperasi()">
+                    <option value="">Pilih Operasi</option>
+                    <option value="display">Display</option>
+                    <option value="count">Count</option>
+                    <option value="sum">Sum</option>
+                    <option value="average">Average</option>
+                    <option value="max">Max</option>
+                    <option value="min">Min</option>
+                    <option value="ganjil">Ganjil</option>
+                    <option value="genap">Genap</option>
+                    <option value="hapus">Hapus</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="labelBesar">Hasil</td>
+            <td><input type="text" id="hasilKeluar" size="20" readonly /></td>
+        </tr>
+    </table>
+</body>
+</html>
+ 
