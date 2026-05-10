@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+        font-family: Arial;
+    }
+ 
+    ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+ 
+    #menu {
+            width: 600px;
+            overflow: hidden;
+        }
+ 
+    li.item {
+            float: left;
+            background-color: hotpink;
+            border-right: 1px solid white; 
+            padding: 5px 10px;
+            width: 140px;
+            vertical-align: top;
+            margin-right: 5px;
+        }
+
+       li.item > a {
+            color: white; 
+            text-decoration: underline; 
+           
+        }
+
+        li.item > ol {
+            background-color: white;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+       li.item > ol > li > a {
+            color: black; 
+            text-decoration: underline;
+            display: block;
+            padding: 3px 0;
+        }
+
+        li.item > ol > li > a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+        $("li.item ol").hide();
+
+        $("li.item").hover(
+            function(){
+                $(this).find("ol").stop(true, true).show();
+            }, 
+            function(){
+                $(this).find("ol").stop(true, true).hide();
+            }
+        );
+    });
+    </script>
+</head>
+<body>
+    <ol id="menu">
+        <li class="item">
+            <a href="#">jQuery</a>
+            <ol>
+                <li><a href="#">Download</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Blog</a></li>
+            </ol>
+        </li>
+        <li class="item">
+            <a href="#">Community</a>
+            <ol>
+                <li><a href="#">Mailing List</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Demos</a></li>
+                <li><a href="#">Plugins</a></li>
+            </ol>
+        </li>
+        <li class="item">
+            <a href="#">Development</a>
+            <ol>
+                <li><a href="#">Source Code</a></li>
+                <li><a href="#">Bug Tracking</a></li>
+                <li><a href="#">Recent Changes</a></li>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>

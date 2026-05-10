@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            margin: 20px;
+        }
+        td {
+            padding: 10px;
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+ 
+        $(".header").click(function(){
+            var cek = $(this).prop("checked");
+            if (cek) {
+                $(".body").prop("checked", true);
+            } else {
+                $(".body").prop("checked", false);
+            }
+        });
+ 
+        $(".body").click(function(){
+            if (!$(this).prop("checked")) {
+                $(".header").prop("checked", false);
+            } else {
+                if ($(".body:checked").length == $(".body").length) {
+                    $(".header").prop("checked", true);
+                }
+            }
+        });
+ 
+    });
+    </script>
+</head>
+<body>
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="50" align="center">
+                <input class="header" type="checkbox"/><br/>
+                <hr/>
+                <input class="body" type="checkbox"/><br/>
+                <input class="body" type="checkbox"/><br/>
+                <input class="body" type="checkbox"/><br/>
+                <input class="body" type="checkbox"/><br/>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
