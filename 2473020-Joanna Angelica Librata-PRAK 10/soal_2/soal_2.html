@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473020-Joanna Angelica Librata</title>
+ <script src="jquery.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 13px;
+        }
+        #atas {
+            width: 300px;
+            border: 1px solid black;
+            padding: 8px;
+        }
+        #atas input {
+            width: 100%;
+            margin-bottom: 3px;
+        }
+        #kotak {
+            border: 1px solid black;
+            width: 500px;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        #judul {
+            text-align: center;
+            border-bottom: 1px solid black;
+            padding-bottom: 8px;
+        }
+        #judul a {
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
+        .footer {
+            border-top: 1px solid black;
+            padding-top: 5px;
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+ 
+        $("#btnLook").click(function(){
+ 
+            $("#hasil").empty();
+ 
+            $.getJSON("SIJson.txt", function(data){
+ 
+                var tampil = "<div id='kotak'>";
+ 
+                tampil += "<div id='judul'><a href='" + data.link + "'>" + data.title + "</a></div><br>";
+ 
+                $.each(data.items, function(i, item){
+ 
+                    tampil += "<a href='" + item.link + "'>" + item.title + "</a><br>";
+                    tampil += "By : " + item.author + " / <i>" + item.published + "</i><br><br>";
+                    tampil += item.description + "<br><br>";
+                    tampil += "Universitas : <a href='" + item.universitas.m + "'>Click Here</a><br>";
+                    tampil += "Tag(s) : " + item.tags + "<br><br>";
+ 
+                });
+ 
+                tampil += "<div class='footer'>&copy;" + data.generator + "</div>";
+                tampil += "</div>";
+ 
+                $("#hasil").html(tampil);
+ 
+            });
+        });
+ 
+    });
+    </script>
+</head>
+<body>
+    <div id="atas">
+        <input type="text" value="Title" disabled><br>
+        <input type="text" value="Content" disabled><br>
+        <input type="text" value="Generator" disabled>
+    </div>
+    <button id="btnLook">Look</button>
+ 
+    <div id="hasil"></div>
+ 
+</body>
+</html>
